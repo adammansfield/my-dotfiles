@@ -1,0 +1,23 @@
+*
+
+# Bash
+!.bashrc
+!.bash_aliases
+!.bash_colors
+!.bash_functions
+!.bash_profile
+!.inputrc
+!.profile
+
+# Git
+!.gitignore
+!.gitglobalignore
+
+# Rxvt
+!.Xdefaults
+
+# Vim
+!.viminfo
+!.vimrc
+
+

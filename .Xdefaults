@@ -1,0 +1,5 @@
+Rxvt*background:  Black
+Rxvt*foreground:  Gray
+Rxvt*scrollBar_right: true
+Rxvt*saveLines: 500
+Rxvt*font: Lucida Console-14
