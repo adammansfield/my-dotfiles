@@ -34,4 +34,6 @@ set output-meta on
   set completion-map-case on
   Control-h: menu-complete
   Control-t: menu-complete-backward  
+  "\e[5~": history-search-backward
+  "\e[6~": history-search-forward
 #$endif
