@@ -21,5 +21,7 @@ alias cs='cygstart'
 
 # Misc
 alias ..='cd ..'
+alias ...='cd ..\..'
 alias v='vim'
 alias clc='clear'
+
