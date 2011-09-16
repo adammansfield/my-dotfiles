@@ -3,8 +3,7 @@ function mdv() {
 }
 
 function cdl() {
-  cd $1
-  l
+  cd $1 && l
 }
 
 # rename multiple files
