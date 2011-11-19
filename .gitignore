@@ -10,6 +10,7 @@
 !.profile
 
 # Git
+!.gitconfig
 !.gitignore
 !.gitglobalignore
 
@@ -18,5 +19,4 @@
 
 # Vim
 !.vimrc
-
 
