@@ -5,3 +5,5 @@
 	excludesfile = ~/.gitglobalignore
 [color]
 	ui = true
+[alias]
+	cdiff = diff --cached
