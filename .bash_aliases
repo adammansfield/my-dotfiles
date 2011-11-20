@@ -25,4 +25,5 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias vi='vim'
 alias clc='clear'
+alias t='python ~/tasks/t.py --task-dir ~/tasks --list tasks'
 
