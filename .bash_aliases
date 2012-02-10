@@ -1,3 +1,18 @@
+# Windows
+alias cs='cygstart'
+alias csc='cygstart ~/apps/chrome/GoogleChromePortable.exe'
+alias cscal='cygstart ~/apps/chrome/GoogleChromePortable.exe --user-data-dir="C:\Data\apps\chrome\Data\profile" --app=https://www.google.com/calendar/render'
+alias csg='cygstart ~/apps/gimp/GimpPortable.exe'
+alias csgs='cygstart  ~/apps/chrome/GoogleChromePortable.exe --user-data-dir="C:\Data\apps\chrome\Data\profile" --app=http://grooveshark.com/#/apm.mansfield/music'
+alias csgc='cygstart ~/apps/gnucash/GnuCashPortable.exe'
+alias csk='cygstart ~/apps/keepass/KeePass.exe'
+alias csm='cygstart ~/apps/chrome/GoogleChromePortable.exe --user-data-dir="C:\Data\apps\chrome\Data\profile" --app=https://mail.google.com/mail/?shva=1#inbox'
+alias csmm='cygstart /cygdrive/c/Program\ Files\ \(x86\)/MediaMonkey/MediaMonkey.exe'
+alias csol='cygstart /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Office/Office14/OUTLOOK.EXE'
+alias csvs='cygstart /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio\ 10.0/Common7/IDE/vcsexpress.exe'
+alias cst='cygstart ~/apps/chrome/GoogleChromePortable.exe --user-data-dir="C:\Data\apps\chrome\Data\profile" --app=http://www.toodledo.com/tasks/index.php#main'
+alias cspm='csol & cst & cscal & csm'
+
 # Interactive operation
 alias rm='rm -i'
 alias cp='cp -i'
@@ -16,9 +31,6 @@ alias lr='ls -R'
 alias l='ls -CF --group-directories-first'
 alias dir='ls --color=auto --format=vertial'
 alias vdir='ls --color=auto --format=long'
-
-# Windows
-alias cs='cygstart'
 
 # Misc
 alias ..='cd ..'
