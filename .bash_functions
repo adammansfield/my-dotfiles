@@ -2,8 +2,8 @@ function mdv() {
   markdown.pl $1 | lynx -stdin
 }
 
-function cdl() {
-  cd $1 && l
+function cd() {
+  builtin cd $1 && ls -hF --color=tty --group-directories-first 
 }
 
 # rename multiple files
