@@ -19,6 +19,20 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
+# Git
+alias ga='git add'
+alias gc='git checkout'
+alias gcl='git clone'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gm='git commit -m'
+alias gma='git commit -am'
+alias gp='git push'
+alias gpu='git pull'
+alias gl='git shortlog -8'
+alias grd='git ls-files --deleted -z | xargs -0 git rm'
+alias gs='git status'
+
 # Grep 
 alias grep='grep --color'
 alias egrep='egrep --color=auto'
