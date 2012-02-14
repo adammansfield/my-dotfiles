@@ -33,6 +33,14 @@ alias gl='git shortlog -8'
 alias grd='git ls-files --deleted -z | xargs -0 git rm'
 alias gs='git status'
 
+# Svn
+alias sa='svn add'
+alias saa="svn status | grep '?' | sed 's/^.* /svn add /' | sed 's/\\/\//g' | bash"
+alias sc='svn commit -m'
+alias sd='svn diff'
+alias sl='svn log -r 'HEAD':'BASE' -l 4'
+alias ss='svn status'
+
 # Grep 
 alias grep='grep --color'
 alias egrep='egrep --color=auto'
