@@ -14,11 +14,6 @@ alias csvs='cygstart /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Stud
 alias cst='cygstart ~/apps/chrome/GoogleChromePortable.exe --user-data-dir="C:\Data\apps\chrome\Data\profile" --app=http://www.toodledo.com/tasks/index.php#main'
 alias cspm='csol & cst & cscal & csm'
 
-# Interactive operation
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-
 # Git
 alias ga='git add'
 alias gc='git commit -m'
