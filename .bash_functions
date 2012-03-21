@@ -1,5 +1,5 @@
 function mdv() {
-  markdown.pl $1 | lynx -stdin
+  markdown.pl $1 | w3m -T text/html
 }
 
 function cd() {
