@@ -18,5 +18,6 @@ set expandtab
 set backspace=indent,eol,start
 
 " Colors
+syntax on
 highlight Cursor guibg=Red guifg=NONE
 highlight Visual guifg=Sys_HighlightText guibg=Sys_Highlight gui=NONE

@@ -14,6 +14,8 @@ shopt -s nocaseglob
 # for example, cd /vr/lgo/apaache would find /var/log/apache
 shopt -s cdspell
 
+# Completion for sudo
+complete -cf sudo
 
 # History Options
 # ---------------
