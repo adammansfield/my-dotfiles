@@ -1,8 +1,9 @@
 [user]
-	name = Adam Mansfield
-	email = adam@adammansfield.org
+    name = Adam Mansfield
+    email = adam@adammansfield.org
 [core]
-	excludesfile = ~/.gitglobalignore
-	autocrlf = true
+    autocrlf = false
+    excludesfile = ~/.gitglobalignore
+    filemode = false
 [color]
-	ui = true
+    ui = true
