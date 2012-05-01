@@ -4,6 +4,12 @@
 
 # Shell Options
 # -------------
+# Prompt Setting
+PS1='\[\e]0;\u@\h \w\a\]\[$(tput setaf 2)\][\u@\h:\W]\[$(tput sgr0)\] $ '
+
+# ls settings
+export LS_COLORS='di=01;37'
+
 # Don't wait for job termination notification
 set -o notify
 
@@ -37,11 +43,3 @@ fi
 if [ -f "${HOME}/.bash_functions" ]; then
   source "${HOME}/.bash_functions"
 fi
-
-# Colors
-# ------
-# Load colors from file
-if [ -f "${HOME}/.bash_colors" ]; then
-  source "${HOME}/.bash_colors"
-fi
-
