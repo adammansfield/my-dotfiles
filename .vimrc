@@ -9,5 +9,4 @@ set undolevels=100
 
 " Colors
 syntax on
-"colorscheme darkblue
-colorscheme murphy
+colorscheme darkblue
