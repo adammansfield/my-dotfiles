@@ -14,6 +14,9 @@ alias csvs='cygstart /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Stud
 alias cst='cygstart /cygdrive/c/Users/adam_2/AppData/Local/Google/Chrome/Application/chrome.exe --app=http://www.toodledo.com/tasks/index.php#main'
 alias cspm='csol & cst & cscal & csm'
 
+# SSH
+alias sshdd='ssh -p 2222 adam@localhost'
+
 # Git
 alias ga='git add'
 alias gc='git commit -m'
