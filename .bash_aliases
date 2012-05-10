@@ -15,6 +15,7 @@ alias cst='cygstart /cygdrive/c/Users/adam_2/AppData/Local/Google/Chrome/Applica
 alias cspm='csol & cst & cscal & csm'
 
 # SSH
+alias sshhtpc='ssh -p 50 adam@192.168.10.150'
 alias sshdd='ssh -p 2222 adam@localhost'
 
 # Git
