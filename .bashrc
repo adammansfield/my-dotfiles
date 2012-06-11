@@ -28,6 +28,13 @@ complete -cf sudo
 # Don't put duplicate lines in the history.
 export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 
+promptFunc()
+{
+  # right before prompting for the next command, save the previous
+  # command in a file.
+  echo "$(date +%Y-%m-%d--%H-%M-%S) $(hostname) $PWD $(history 1)" >> ~/.full_history
+}
+PROMPT_COMMAND=promptFunc
 
 # Aliases
 # -------
