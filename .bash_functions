@@ -3,7 +3,11 @@ function mdv() {
 }
 
 function cd() {
-  builtin cd $1 && ls -hF --color=tty --group-directories-first 
+  if [ "$1" == "" ]; then
+    builtin cd && ls -hF --color=tty --group-directories-first
+  else
+    builtin cd "$1" && ls -hF --color=tty --group-directories-first 
+  fi
 }
 
 # rename multiple files
