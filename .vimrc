@@ -13,3 +13,5 @@ autocmd GUIEnter * set visualbell t_vb=
 " Colors
 syntax on
 colorscheme darkblue
+set t_Co=256
+
