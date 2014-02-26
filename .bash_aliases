@@ -14,14 +14,16 @@ alias csvs='cygstart /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Stud
 alias cst='cygstart /cygdrive/c/Users/adam_2/AppData/Local/Google/Chrome/Application/chrome.exe --app=http://www.toodledo.com/tasks/index.php#main'
 alias cspm='csol & cst & cscal & csm'
 
-# SSH
+# SSH / SCP
 alias sshhtpc='ssh -p 50 adam@192.168.10.150'
 alias sshdd='ssh -p 2222 adam@localhost'
+alias scpdd='scp -P 2222'
+alias sshco='ssh -p 2223 adam@localhost'
+alias sshmills='ssh mansfa2@mills.mcmaster.ca'
 
 # Git
 alias ga='git add'
-alias gc='git commit -m'
-alias gca='git commit -am'
+alias gc='git commit'
 alias gco='git checkout'
 alias gcl='git clone'
 alias gd='git diff'
@@ -39,8 +41,9 @@ alias saa="svn status | grep '?' | sed 's/^.* /svn add /' | sed 's/\\\/\//g' | b
 alias sra="svn status | grep \! | sed 's/^.* /svn rm /' | sed 's/\\\/\//g' |  bash"
 alias sc='svn commit -m'
 alias sd='svn diff'
-alias sl='svn log -r 'HEAD':'BASE' -l 5'
+alias sl='svn log -l 5'
 alias ss='svn status'
+alias sup='svn update'
 
 # Grep 
 alias grep='grep --color'
@@ -60,6 +63,7 @@ alias vdir='ls --color=auto --format=long'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias vi='vim'
+alias pong='ping 8.8.8.8'
 alias t='python ~/tasks/t.py --task-dir ~/tasks --list tasks'
 alias w3m='w3m -o anchor_color=yellow -o display_charset=Raw'
 
