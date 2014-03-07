@@ -1,5 +1,5 @@
 " Global Settings
-" -----------------------------------------------------------------------------
+"==============================================================================
 set nocompatible               " Use Vim defaults.                                                                 (cp)
 
 " Miscellaneous
@@ -8,10 +8,10 @@ set history=50                 " Keep 50 lines of command history.              
 set infercase                  " During keyword completion, fix case of new word (when ignore case is on).        (inf)
 "set nrformats+=alpha          " Adds alpha chars to list that gets incremented/decremented with ^A/^X.            (nf)
 set sidescroll=5               " The minimal number of columns to scroll horizontally.                             (ss)
-set textwidth=80               " Number of columns before an automatic line break is inserted (see formatoptions). (tw)
+"set textwidth=120             " Number of columns before an automatic line break is inserted (see formatoptions). (tw)
 "set winminheight=0            " The minimal height of the window when it's not the current window.               (wmh)
 set undolevels=100             " Keep 100 changes that can be undone..                                             (ul)
-
+    
 " Backup
 "set backup                    " Will create a backup before overwriting a file.                                   (bk)
 "set backupext=.bkup           " Defines the extension used in a backup file (default is '~').                    (bex)
@@ -44,6 +44,12 @@ set formatoptions+=r           " Auto-insert comment leader after hitting <Enter
 set formatoptions+=o           " Auto-insert comment leader after hitting 'o' or 'O' in Normal mode.               (fo)
 set formatoptions+=q           " Allow formatting of comments with 'gq'.                                           (fo)
 
+" Line Numbers 
+set numberwidth=3              " Minimum number of columns to use for line number.                                (nuw)
+if exists('+relativenumber')
+  set relativenumber           " Show the line number relative to the current line (Vim v7.3).                    (rnu)
+endif
+
 " List Characters              " Strings used in 'list' mode to show hidden characters (default=eol:$).
 "set listchars+=tab:>-         " Char for a tab.                                                                  (lcs)
 "set listchars+=trail:-        " Char for trailing spaces.                                                        (lcs)
@@ -56,6 +62,10 @@ set incsearch                  " Highlights what you are searching for as you ty
 set ignorecase                 " Ignores case in search patterns.                                                  (ic)
 set smartcase                  " Don't ignore case when the search pattern has uppercase.                         (scs)
 set wrapscan                   " Allows search to wrap to top of document when the bottom has been hit.            (ws)
+
+" Splits
+set splitbelow                 " Split the window below when splitting horizontally.                               (sb)
+set splitright                 " Split the window to the right when splitting vertically.                         (spr)
 
 " Tabs
 set autoindent                 " Turn on auto-indenting.                                                           (ai)
@@ -74,58 +84,182 @@ set linebreak                  " Wrap long lines at a space instead of in the mi
 set nowrap                     " Allows text to continue off the window (need horizontal scrolling).
 
 
+
+" Remappings 
+" =============================================================================
+" Remapping commands
+"   map      Map recursively.     The right-hand side of the map is re-mappable. 
+"   noremap  Map non-recursively. The right-hand side of the map is not re-mappable.
+
+" A prepended character of map or noremap indicates the mode for which the map is applied:
+"   n - Normal mode.
+"   i - Insert mode.
+"   v - Visual and select mode.
+"   s - Select mode.
+"   x - Visual mode.
+"   c - Command-line mode.
+"   o - Operator pending mode.
+
+" Normal Remappings
+" -----------------
+
+" Move viewport up by three(3) lines instead of one(1).
+nnoremap <C-e> 3<C-e>
+
+" Move viewport down by three(3) lines instead of one(1).
+nnoremap <C-y> 3<C-y>
+
+"inoremap ;; <esc>  " remap hh to escape in insert mode.
+"snoremap ;; <esc>  " remap hh to escape in insert mode.
+"xnoremap ;; <esc>  " remap hh to escape in insert mode.
+"cnoremap ;; <esc>  " remap hh to escape in insert mode.
+"onoremap ;; <esc>  " remap hh to escape in insert mode.
+
+
+" Map Leader Remappings
+" ---------------------
+
+" Remap space to a NO-OP. 
+nnoremap <SPACE> <Nop>
+
+" Set mapleader to be able to do extra key combinations.
+let mapleader = "\<SPACE>"
+
+
+" Move down half a screen.
+nmap <leader>d <C-d>
+
+" Move up half a screen.
+nmap <leader>u <C-u>
+
+" Move viewport up one line.
+nmap <leader>e <C-e>
+
+" Move viewport down one line.
+nmap <leader>y <C-y>
+
+ " Enter blockwise visual mode.
+nmap <leader>q <C-q>
+
+" Enter blockwise visual mode.
+nmap <leader>v <C-v>
+
+
+" Decrease window split size horizontally.
+nmap <leader>w, <C-w><
+
+" Increase window split size horizontally.
+nmap <leader>w. <C-w>>
+
+" Decrease window split size vertically.
+nmap <leader>w- <C-w>-
+
+" Increase window split size vertically.
+nmap <leader>w+ <C-w>+
+
+" Normalize window split sizes.
+nmap <leader>w+ <C-w>+
+
+
+" Switch to window above.
+nmap <leader>wj <C-w>j
+
+" Switch to window below.
+nmap <leader>wk <C-w>k
+
+" Switch to window to the left.
+nmap <leader>wh <C-w>h
+
+" Switch to window to the right.
+nmap <leader>wl <C-w>l
+
+" Split current window horizontally.
+nmap <leader>ws <C-w>s
+
+" Split current window vertically.
+nmap <leader>wv <C-w>v
+
+
+" Move window above.
+nmap <leader>wJ <C-w>J
+
+" Move window below.
+nmap <leader>wK <C-w>K
+
+" Move window to the left.
+nmap <leader>wH <C-w>H
+
+" Move window to the right.
+nmap <leader>wL <C-w>L
+
+
+
 " File Contextual Settings
-" -----------------------------------------------------------------------------
+" =============================================================================
 
 " C
-autocmd FileType c,h setlocal cindent                  " Enable the intelligent indentation for C.           (cin)
-autocmd FileType c,h setlocal matchpairs+==:;          " Allow the match pairs (%) to work with '=' and ';'. (mps)
-autocmd FileType c,h setlocal shiftwidth=2             " Width (in spaces) used in each step of autoindent.   (sw)
-autocmd FileType c,h setlocal softtabstop=2            " Makes spaces feel like tabs when deleting.          (sts)
-autocmd FileType c,h setlocal tabstop=2                " Width (in spaces) that a <tab> is displayed as.      (ts)
+autocmd FileType c,h setlocal cindent                  " Enable the intelligent indentation for C.               (cin)
+autocmd FileType c,h setlocal matchpairs+==:;          " Allow the match pairs (%) to work with '=' and ';'.     (mps)
+autocmd FileType c,h setlocal shiftwidth=2             " Width (in spaces) used in each step of autoindent.       (sw)
+autocmd FileType c,h setlocal softtabstop=2            " Makes spaces feel like tabs when deleting.              (sts)
+autocmd FileType c,h setlocal tabstop=2                " Width (in spaces) that a <tab> is displayed as.          (ts)
 
 " C++
-autocmd FileType cpp,hpp setlocal matchpairs+==:;      " Allow the match pairs (%) to work with '=' and ';'. (mps)
-autocmd FileType cpp,hpp setlocal shiftwidth=2         " Width (in spaces) used in each step of autoindent.   (sw)
-autocmd FileType cpp,hpp setlocal softtabstop=2        " Makes spaces feel like tabs when deleting.          (sts)
-autocmd FileType cpp,hpp setlocal tabstop=2            " Width (in spaces) that a <tab> is displayed as.      (ts)
+autocmd FileType cpp,hpp setlocal matchpairs+==:;      " Allow the match pairs (%) to work with '=' and ';'.     (mps)
+autocmd FileType cpp,hpp setlocal shiftwidth=2         " Width (in spaces) used in each step of autoindent.       (sw)
+autocmd FileType cpp,hpp setlocal softtabstop=2        " Makes spaces feel like tabs when deleting.              (sts)
+autocmd FileType cpp,hpp setlocal tabstop=2            " Width (in spaces) that a <tab> is displayed as.          (ts)
 
 " Java
-autocmd FileType java setlocal matchpairs+==:;         " Allow the match pairs (%) to work with '=' and ';'. (mps)
-autocmd FileType java setlocal smartindent             " Enable the smart indenting feature.                  (si)
+autocmd FileType java setlocal matchpairs+==:;         " Allow the match pairs (%) to work with '=' and ';'.     (mps)
+autocmd FileType java setlocal smartindent             " Enable the smart indenting feature.                      (si)
+autocmd FileType cpp,hpp setlocal shiftwidth=2         " Width (in spaces) used in each step of autoindent.       (sw)
+autocmd FileType cpp,hpp setlocal softtabstop=2        " Makes spaces feel like tabs when deleting.              (sts)
+autocmd FileType cpp,hpp setlocal tabstop=2            " Width (in spaces) that a <tab> is displayed as.          (ts)
 
 " Javascript
-autocmd FileType js setlocal matchpairs+==:;           " Allow the match pairs (%) to work with '=' and ';'. (mps)
-autocmd FileType js setlocal smartindent               " Enable the smart indenting feature.                  (si)
+autocmd FileType javascript setlocal matchpairs+==:;   " Allow the match pairs (%) to work with '=' and ';'.     (mps)
+autocmd FileType javascript setlocal smartindent       " Enable the smart indenting feature.                      (si)
+autocmd FileType javascript setlocal shiftwidth=2      " Width (in spaces) used in each step of autoindent.       (sw)
+autocmd FileType javascript setlocal softtabstop=2     " Makes spaces feel like tabs when deleting.              (sts)
+autocmd FileType javascript setlocal tabstop=2         " Width (in spaces) that a <tab> is displayed as.          (ts)
 
 " HTML
-autocmd FileType xhtml,html,htm setlocal shiftwidth=2  " Width (in spaces) used in each step of autoindent.   (sw)
-autocmd FileType xhtml,html,htm setlocal softtabstop=2 " Makes spaces feel like tabs when deleting.          (sts)
-autocmd FileType xhtml,html,htm setlocal tabstop=2     " Width (in spaces) that a <tab> is displayed as.      (ts)
+autocmd FileType xhtml,html,htm setlocal shiftwidth=2  " Width (in spaces) used in each step of autoindent.       (sw)
+autocmd FileType xhtml,html,htm setlocal softtabstop=2 " Makes spaces feel like tabs when deleting.              (sts)
+autocmd FileType xhtml,html,htm setlocal tabstop=2     " Width (in spaces) that a <tab> is displayed as.          (ts)
 
 " PHP
-autocmd FileType php setlocal shiftwidth=2             " Width (in spaces) used in each step of autoindent.   (sw)
-autocmd FileType php setlocal softtabstop=2            " Makes spaces feel like tabs when deleting.          (sts)
-autocmd FileType php setlocal tabstop=2                " Width (in spaces) that a <tab> is displayed as.      (ts)
+autocmd FileType php setlocal shiftwidth=2             " Width (in spaces) used in each step of autoindent.       (sw)
+autocmd FileType php setlocal softtabstop=2            " Makes spaces feel like tabs when deleting.              (sts)
+autocmd FileType php setlocal tabstop=2                " Width (in spaces) that a <tab> is displayed as.          (ts)
 
 " Python
-autocmd FileType py setlocal smartindent               " Enable the smart indenting feature.                  (si)
+autocmd FileType python setlocal smartindent           " Enable the smart indenting feature.                      (si)
+autocmd FileType python setlocal textwidth=79          " Autoinsert newline when line width is greater than this. (tw)
+autocmd FileType python setlocal shiftwidth=4          " Width (in spaces) used in each step of autoindent.       (sw)
+autocmd FileType python setlocal softtabstop=4         " Makes spaces feel like tabs when deleting.              (sts)
+autocmd FileType python setlocal tabstop=4             " Width (in spaces) that a <tab> is displayed as.          (ts)
+if exists('+colorcolumn')
+  autocmd FileType python setlocal colorcolumn=80      " Column that is highlighted.                              (cc)
+endif
 
 " Text
-autocmd FileType txt setlocal formatoptions+=n         " Auto-indent lists.                                   (fo)
-autocmd FileType txt setlocal formatoptions+=t         " Auto-wrap text using textwidth.                      (fo)
+autocmd FileType txt setlocal formatoptions+=n         " Auto-indent lists.                                       (fo)
+autocmd FileType txt setlocal formatoptions+=t         " Auto-wrap text using textwidth.                          (fo)
 
 " XML
-autocmd FileType xml setlocal shiftwidth=2             " Width (in spaces) used in each step of autoindent.   (sw)
-autocmd FileType xml setlocal softtabstop=2            " Makes spaces feel like tabs when deleting.          (sts)
-autocmd FileType xml setlocal tabstop=2                " Width (in spaces) that a <tab> is displayed as.      (ts)
+autocmd FileType xml setlocal shiftwidth=2             " Width (in spaces) used in each step of autoindent.       (sw)
+autocmd FileType xml setlocal softtabstop=2            " Makes spaces feel like tabs when deleting.              (sts)
+autocmd FileType xml setlocal tabstop=2                " Width (in spaces) that a <tab> is displayed as.          (ts)
 
 " Remove any extra white space at the end of a line before writing to any file.
 "autocmd! BufWrite,FileWritePre * call RemoveWhiteSpace()
 
 
+
 " Abbreviations
-" -----------------------------------------------------------------------------
+" =============================================================================
 
 " C
 abbreviate #i #include
@@ -142,8 +276,9 @@ abbreviate <? <?php?><left><left>
 "abbreviate "" &quot;&quot;<left><left><left><left><left>
 
 
+
 " Functions
-" -----------------------------------------------------------------------------
+" =============================================================================
 
 " Renames param1 tags to be param2 tags
 "function! RenameTag(param1, param2)
@@ -169,8 +304,9 @@ abbreviate <? <?php?><left><left>
 "endfunction
 
 
+
 " Command Reference
-" ------------------------------------------------------------
+" =============================================================================
 
 " *                     - searches for word under cursor
 " gd                    - finds definition of variable/function under cursor
