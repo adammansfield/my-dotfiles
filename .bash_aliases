@@ -39,7 +39,7 @@ alias gs='git status'
 alias sa='svn add'
 alias saa="svn status | grep '?' | sed 's/^.* /svn add /' | sed 's/\\\/\//g' | bash"
 alias sra="svn status | grep \! | sed 's/^.* /svn rm /' | sed 's/\\\/\//g' |  bash"
-alias sc='svn commit -m'
+alias sc='svn commit'
 alias sd='svn diff'
 alias sl='svn log -l 5'
 alias ss='svn status'
@@ -60,6 +60,7 @@ alias dir='ls --color=auto --format=vertial'
 alias vdir='ls --color=auto --format=long'
 
 # Misc
+alias -- -='cd -'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias vi='vim'
