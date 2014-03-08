@@ -1,6 +1,6 @@
 Rxvt*background: #0A0A0A
 Rxvt*foreground: Gray
-Rxvt*font: Lucida Console-14
+Rxvt*font: Lucida Console-12
 Rxvt*saveLines: 1000
 Rxvt*scrollBar: False
 Rxvt*scrollTtyOutput: False
