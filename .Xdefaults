@@ -1,8 +1,7 @@
 Rxvt*background: #0A0A0A
 Rxvt*foreground: Gray
-Rxvt*font: Lucida Console-12
-Rxvt*geometry: 80x50
-Rxvt*saveLines: 5000
+Rxvt*font: Lucida Console-13
+Rxvt*saveLines: 1000
 Rxvt*scrollBar: False
 Rxvt*scrollTtyOutput: False
 Rxvt*scrollTtyKeypress: True
@@ -28,7 +27,7 @@ URxvt.boldfont:xft:Monospace:style=bold:pixelsize=12
 URxvt*color0:  #000000
 ! red
 URxvt*color1:  #B40000
-! green 
+! green
 URxvt*color2:  #00AA00
 ! yellow
 URxvt*color3:  #AAAA00
