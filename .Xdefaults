@@ -1,7 +1,58 @@
 Rxvt*background: #0A0A0A
 Rxvt*foreground: Gray
 Rxvt*font: Lucida Console-12
-Rxvt*saveLines: 1000
+Rxvt*geometry: 80x50
+Rxvt*saveLines: 5000
 Rxvt*scrollBar: False
 Rxvt*scrollTtyOutput: False
 Rxvt*scrollTtyKeypress: True
+
+URxvt*background: #0A0A0A
+URxvt*foreground: Gray
+URxvt*geometry: 80x50
+URxvt*saveLines: 5000
+URxvt*scrollBar: False
+URxvt*scrollTtyOutput: False
+URxvt*scrollTtyKeypress: True
+
+Xft.dpi:        160
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+
+URxvt.font:xft:Monospace:pixelsize=12
+URxvt.boldfont:xft:Monospace:style=bold:pixelsize=12
+
+! black
+URxvt*color0:  #000000
+! red
+URxvt*color1:  #B40000
+! green 
+URxvt*color2:  #00AA00
+! yellow
+URxvt*color3:  #AAAA00
+! blue
+URxvt*color4:  #5555AA
+! magenta
+URxvt*color5:  #AA00AA
+! cyan
+URxvt*color6:  #00AAAA
+! white
+URxvt*color7:  #AAAAAA
+! bright black
+URxvt*color8:  #555555
+! bright red
+URxvt*color9:  #FF0000
+! bright green
+URxvt*color10: #00FF00
+! bright yellow
+URxvt*color11: #FFFF00
+! bright blue
+URxvt*color12: #6464FF
+! bright magenta
+URxvt*color13: #FF00FF
+! bright cyan
+URxvt*color14: #00FFFF
+! bright white
+URxvt*color15: #FFFFFF
