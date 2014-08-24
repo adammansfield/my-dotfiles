@@ -1,24 +1,27 @@
 *
 
-# User
+# user
 !.inputrc
 !.profile
 
-# Bash
+# bash
 !.bashrc
 !.bash_aliases
 !.bash_colors
 !.bash_functions
 !.bash_profile
 
-# Git
+# git
 !.gitconfig
 !.gitignore
 !.gitglobalignore
 
-# Rxvt
+# rxvt
 !.Xdefaults
 
-# Vim
+# tmux
+!.tmux.conf
+
+# vim
 !.vimrc
 
