@@ -8,8 +8,9 @@ Rxvt*scrollTtyKeypress: True
 
 URxvt*background: #0A0A0A
 URxvt*foreground: Gray
-URxvt*geometry: 80x50
-URxvt*saveLines: 5000
+URxvt*font: xft:LucidaTypewriter:style=Sans Bold:size=10
+URxvt*geometry: 79x50
+URxvt*saveLines: 1000
 URxvt*scrollBar: False
 URxvt*scrollTtyOutput: False
 URxvt*scrollTtyKeypress: True
