@@ -93,10 +93,10 @@ set splitright                 " Split the window to the right when splitting ve
 set autoindent                 " Turn on auto-indenting.                                                           (ai)
 set copyindent                 " When auto-indenting, use the indenting format of the previous line.               (ci)
 set expandtab                  " Insert spaces instead of <tab>                                                    (et)
-set shiftwidth=4               " Width (in spaces) used in each step of autoindent (as well as << and >>).         (sw)
+set shiftwidth=2               " Width (in spaces) used in each step of autoindent (as well as << and >>).         (sw)
 "set smarttab                  " 'shiftwidth' used in front of a line, but 'tabstop' used otherwise.              (sta)
-set softtabstop=4              " Makes spaces feel like tabs when deleting (e.g. Delete all 4 spaces at once).    (sts)
-set tabstop=4                  " Width (in spaces) that a <tab> is displayed as.                                   (ts)
+set softtabstop=2              " Makes spaces feel like tabs when deleting (e.g. Delete all 4 spaces at once).    (sts)
+set tabstop=2                  " Width (in spaces) that a <tab> is displayed as.                                   (ts)
 
 " TOhtml
 "let html_use_css = 1          " The ':%TOhtml' command generates html without <font> tags.
@@ -121,7 +121,7 @@ set nowrap                     " Allows text to continue off the window (need ho
 "   %r: Readonly flag, text is '[RO]'.
 "   %l: Line number.
 "   %P: Percentage through file of displayed window.  This is like the percentage described for 'ruler'.
-set statusline=\ FILE:\ %F%m%r\ \ \ CWD:\ %{getcwd()}\ \ \ Line:\ %l\ (%P)\ \ \ %{HasPaste()}
+set statusline=\ %l,%c\ (%P)\ \ %F%m%r\ %{HasPaste()}\ (cwd:\ %{getcwd()})
 hi StatusLine ctermbg=brown ctermfg=white
 
 
