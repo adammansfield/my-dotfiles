@@ -124,6 +124,10 @@ set nowrap                     " Allows text to continue off the window (need ho
 set statusline=\ %l,%c\ (%P)\ \ %F%m%r\ %{HasPaste()}\ (cwd:\ %{getcwd()})
 hi StatusLine ctermbg=brown ctermfg=white
 
+" Highlight EOL whitespace with a red background except on the current line being edited.
+autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
+autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
+highlight EOLWS ctermbg=red guibg=red
 
 " Remappings
 " =============================================================================
@@ -229,6 +233,8 @@ nnoremap <leader>wL <C-w>L
 nnoremap <leader>wv <C-w>v
 nnoremap <leader>ws <C-w>s
 
+" Remove trailing whitespace
+nnoremap <silent> <leader>rws :call <SID>RemoveTrailingWhitespace()<CR>
 
 " File Contextual Settings
 " =============================================================================
@@ -290,11 +296,6 @@ autocmd FileType xml setlocal shiftwidth=2             " Width (in spaces) used 
 autocmd FileType xml setlocal softtabstop=2            " Makes spaces feel like tabs when deleting.              (sts)
 autocmd FileType xml setlocal tabstop=2                " Width (in spaces) that a <tab> is displayed as.          (ts)
 
-" Remove any extra white space at the end of a line before writing to any file.
-autocmd! BufWrite,FileWritePre * call RemoveTrailingWhiteSpace()
-
-
-
 " Abbreviations
 " =============================================================================
 
@@ -312,17 +313,21 @@ abbreviate <? <?php?><left><left>
 "abbreviate r' &rsquo;
 "abbreviate "" &quot;&quot;<left><left><left><left><left>
 
-
-
 " Functions
 " =============================================================================
 
-" Remove trailing white space and keep cursor position.
-func! RemoveTrailingWhiteSpace()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
+" Remove trailing white space while keeping cursor position and last search.
+function! <SID>RemoveTrailingWhitespace()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
 
 " Returns true if paste mode is enabled
 function! HasPaste()
