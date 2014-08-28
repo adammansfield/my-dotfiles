@@ -116,12 +116,17 @@ set linebreak                  " Wrap long lines at a space instead of in the mi
 set nowrap                     " Allows text to continue off the window (need horizontal scrolling).
 
 " Status Line
+"   %l: Line number.
+"   %c: Column number.
+"   %P: Percentage through file of displayed window.  This is like the percentage described for 'ruler'.
+"   %f: Path to the file in the buffer. Relative to current working directory.
 "   %F: Full path to the file in the buffer.
 "   %m: Modified flag, text is '[+]'.
 "   %r: Readonly flag, text is '[RO]'.
-"   %l: Line number.
-"   %P: Percentage through file of displayed window.  This is like the percentage described for 'ruler'.
-set statusline=\ %l,%c\ (%P)\ \ %F%m%r\ %{HasPaste()}\ (cwd:\ %{getcwd()})
+"   %=: Separation point between left and right aligned items.
+"   %<: Where to truncate line if too long. Default is at the start.
+"   %{getcwd()}: Full path to current working directory.
+set statusline=\ %f%m%r%<\ %{getcwd()}%=%{HasPaste()}\ %l,%c\(%P)
 hi StatusLine ctermbg=brown ctermfg=white
 
 " Highlight EOL whitespace with a red background except on the current line being edited.
@@ -153,7 +158,6 @@ nnoremap k gk
 
 " Remap 0 to first non-blank character instead of start of line.
 nnoremap 0 ^
-
 
 " Move viewport up/down by three(3) lines instead of one(1).
 nnoremap <C-e> 3<C-e>
@@ -234,7 +238,7 @@ nnoremap <leader>wv <C-w>v
 nnoremap <leader>ws <C-w>s
 
 " Remove trailing whitespace
-nnoremap <silent> <leader>rws :call <SID>RemoveTrailingWhitespace()<CR>
+nnoremap <silent> <leader>rtws :call <SID>RemoveTrailingWhitespace()<CR>
 
 " File Contextual Settings
 " =============================================================================
@@ -332,7 +336,7 @@ endfunction
 " Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
-        return 'PASTE MODE'
+        return 'PasteMode'
     en
     return ''
 endfunction
