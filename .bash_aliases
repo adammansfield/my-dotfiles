@@ -51,6 +51,6 @@ alias ...='cd ../..'
 alias cs='cygstart'
 alias vi='vim'
 alias pong='ping 8.8.8.8'
-alias t='python ~/tasks/t.py --task-dir ~/tasks --list tasks'
+alias t='tmux'
 alias w3m='w3m -o anchor_color=yellow -o display_charset=Raw'
 
