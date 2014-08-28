@@ -116,17 +116,18 @@ set linebreak                  " Wrap long lines at a space instead of in the mi
 set nowrap                     " Allows text to continue off the window (need horizontal scrolling).
 
 " Status Line
-"   %l: Line number.
 "   %c: Column number.
-"   %P: Percentage through file of displayed window.  This is like the percentage described for 'ruler'.
-"   %f: Path to the file in the buffer. Relative to current working directory.
+"   %f: Path to the file in the buffer as relative to current directory.
 "   %F: Full path to the file in the buffer.
+"   %l: Line number.
+"   %P: Percentage through file of displayed window.  This is like the percentage described for 'ruler'.
 "   %m: Modified flag, text is '[+]'.
 "   %r: Readonly flag, text is '[RO]'.
+"   %t: File name (tail) of file in the buffer.
 "   %=: Separation point between left and right aligned items.
 "   %<: Where to truncate line if too long. Default is at the start.
 "   %{getcwd()}: Full path to current working directory.
-set statusline=\ %f%m%r%<\ %{getcwd()}%=%{HasPaste()}\ %l,%c\(%P)
+set statusline=\ %f%m%r\ %<%{getcwd()}%=%{HasPaste()}\ %l,%c\(%P)
 hi StatusLine ctermbg=brown ctermfg=white
 
 " Highlight EOL whitespace with a red background except on the current line being edited.
