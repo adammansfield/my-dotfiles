@@ -14,6 +14,7 @@ set history=100                " Keep the given number of lines of command histo
 set hidden                     " Buffer will not unload if it is not displayed in a window.                       (hid)
 set lazyredraw                 " Screen will not be redrawn while executing marcos.                                (lz)
 set magic                      " Changes special characters used in search patterns (default is on)
+set mouse=a                    " Enable the use of the mouse.
 set infercase                  " During keyword completion, fix case of new word (when ignore case is on).        (inf)
 "set nrformats+=alpha          " Adds alpha chars to list that gets incremented/decremented with ^A/^X.            (nf)
 "set textwidth=120             " Number of columns before an automatic line break is inserted (see formatoptions). (tw)
