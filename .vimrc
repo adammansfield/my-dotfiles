@@ -17,6 +17,7 @@ set magic                      " Changes special characters used in search patte
 set mouse=a                    " Enable the use of the mouse.
 set infercase                  " During keyword completion, fix case of new word (when ignore case is on).        (inf)
 "set nrformats+=alpha          " Adds alpha chars to list that gets incremented/decremented with ^A/^X.            (nf)
+set synmaxcol=2048             " Maximum column in which to search for syntax items. Helps speed up highlighting. (smc)
 "set textwidth=120             " Number of columns before an automatic line break is inserted (see formatoptions). (tw)
 "set winminheight=0            " The minimal height of the window when it's not the current window.               (wmh)
 set undolevels=100             " Keep 100 changes that can be undone.                                              (ul)
