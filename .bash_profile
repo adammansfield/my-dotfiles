@@ -22,3 +22,6 @@ fi
 # if [ -d "${HOME}/info" ]; then
 #   INFOPATH="${HOME}/info:${INFOPATH}"
 # fi
+
+export PYTHONPATH=".:/usr/local/lib/python2.7"
+
