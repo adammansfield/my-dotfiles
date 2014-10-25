@@ -1,13 +1,5 @@
-*.swp
-
 # Autohotkey
 *.ahk.bak
-
-# Python
-*.py[co]
-
-# Visual Studio
-*.suo
 
 # Packages
 dist
@@ -23,3 +15,14 @@ develop-eggs
 
 # Personal
 references
+
+# Python
+*.py[co]
+
+# Vim
+*.swp
+*.swo
+
+# Visual Studio
+*.suo
+
