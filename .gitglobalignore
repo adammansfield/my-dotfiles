@@ -1,6 +1,16 @@
 # Autohotkey
 *.ahk.bak
 
+# Eclipse
+.metadata
+
+# Python
+*.py[co]
+
+# Visual Studio
+*.suo
+
+>>>>>>> .gitglobalignore: Added Eclipse .metadata.
 # Packages
 dist
 build
