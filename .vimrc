@@ -9,6 +9,7 @@ filetype indent on             " Turn filetype indent scripts on.               
 " Miscellaneous
 set autoread                   " Automatically update external changes to file.                                    (ar)
 set backspace=indent,eol,start " Allows backspacing beyond starting point of insert mode, indents and line breaks. (bs)
+set clipboard^=unnamed         " Will use the system clipboard register '*' for all yank, delete, change ops.      (cb)
 set fileformats=unix,dos,mac   " The <EOL> formats when editing new buffers. Use Unix as the standard file type.  (ffs)
 set history=100                " Keep the given number of lines of command history.                                (hi)
 set hidden                     " Buffer will not unload if it is not displayed in a window.                       (hid)
@@ -293,6 +294,9 @@ if exists('+colorcolumn')
   autocmd FileType python setlocal colorcolumn=80      " Column that is highlighted.                              (cc)
   hi ColorColumn ctermbg=brown ctermfg=white
 endif
+
+" Tex
+autocmd FileType tex setlocal wrap                     " Allows text to continue off the window (need horizontal scrolling).
 
 " Text
 autocmd FileType txt setlocal formatoptions+=n         " Auto-indent lists.                                       (fo)

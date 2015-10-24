@@ -3,6 +3,7 @@
 
 # Eclipse
 .metadata
+.recommenders
 
 # Python
 *.py[co]
