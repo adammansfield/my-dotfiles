@@ -7,6 +7,12 @@ Rxvt*scrollTtyOutput: False
 Rxvt*scrollTtyKeypress: True
 
 URxvt*background: #0A0A0A
+! Default font
+URxvt*font: xft:DejaVu Sans Mono:style=book
+URxvt*boldfont: xft:DejaVu Sans Mono:style=bold
+! Backup font
+!URxvt.font:xft:Monospace:pixelsize=14
+!URxvt.boldfont:xft:Monospace:style=bold:pixelsize=14
 URxvt*foreground: Gray
 URxvt*font: xft:LucidaTypewriter:style=Sans Bold:size=10
 URxvt*geometry: 79x50
