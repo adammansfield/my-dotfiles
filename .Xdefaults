@@ -8,8 +8,8 @@ Rxvt*scrollTtyKeypress: True
 
 URxvt*background: #0A0A0A
 ! Default font
-URxvt*font: xft:DejaVu Sans Mono:style=book
-URxvt*boldfont: xft:DejaVu Sans Mono:style=bold
+URxvt.font: xft:DejaVu Sans Mono:style=book:size=12
+URxvt.boldfont: xft:DejaVu Sans Mono:style=bold:size=12
 ! Backup font
 !URxvt.font:xft:Monospace:pixelsize=14
 !URxvt.boldfont:xft:Monospace:style=bold:pixelsize=14
