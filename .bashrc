@@ -1,7 +1,6 @@
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 
-
 # Shell Options
 # -------------
 # Prompt Setting
@@ -28,10 +27,9 @@ complete -cf sudo
 # Don't put duplicate lines in the history.
 export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 
+# Save the previous command in a file before prompting for the next command.
 promptFunc()
 {
-  # right before prompting for the next command, save the previous
-  # command in a file.
   echo "$(date +%Y-%m-%d--%H-%M-%S) $(hostname) $PWD $(history 1)" >> ~/.full_history
 }
 PROMPT_COMMAND=promptFunc
@@ -43,10 +41,15 @@ if [ -f "${HOME}/.bash_aliases" ]; then
   source "${HOME}/.bash_aliases"
 fi
 
-
 # Functions
 # ---------
 # Load functions from file
 if [ -f "${HOME}/.bash_functions" ]; then
   source "${HOME}/.bash_functions"
+fi
+
+# Private (Not In Git Repo)
+# -------------------------
+if [ -f "${HOME}/.bash_private" ]; then
+  source "${HOME}/.bash_private"
 fi

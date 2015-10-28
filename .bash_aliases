@@ -32,7 +32,6 @@ alias scpdd='scp -P 2222'
 
 # ssh
 alias ssh='ssh -c arcfour,blowfish-cbc -C'
-alias sshdd='ssh -c arcfour,blowfish-cbc -C -p 2222 adam@localhost'
 
 # svn
 alias sa='svn add'
