@@ -1,4 +1,14 @@
-function cd() {
+function apt-get()
+{
+  if [ "$(uname -o)" == "Cygwin" ]; then
+    apt-cyg $@
+  else
+    apt-get $@
+  fi
+}
+
+function cd()
+{
   if [ "$1" == "" ]; then
     builtin cd && ls -hF --color=tty --group-directories-first
   else
@@ -6,14 +16,16 @@ function cd() {
   fi
 }
 
-function mdview() {
+function mdview()
+{
   markdown.pl $1 > mdtemp.html && chrome.exe mdtemp.html && sleep 1s && rm mdtemp.html
 }
 
-function sudo() {
+function sudo()
+{
   if [ "$(uname -o)" == "Cygwin" ]; then
     cygstart --action=runas $@
   else
-    /usr/bin/sudo "$@"
+    sudo "$@"
   fi
 }
