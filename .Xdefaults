@@ -1,3 +1,15 @@
+! Resolution | Diagonal | DPI
+! -----------|----------|----
+!  2560x1440 |    30 in | 100
+!  1920x1080 |    24 in |  92
+
+! Manually set dpi if not it is detected incorrectly.
+!Xft.dpi:        100
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+
 Rxvt*background: #0A0A0A
 Rxvt*foreground: Gray
 Rxvt*font: Lucida Console-13
@@ -7,12 +19,8 @@ Rxvt*scrollTtyOutput: False
 Rxvt*scrollTtyKeypress: True
 
 URxvt*background: #0A0A0A
-! Default font
-URxvt.font: xft:DejaVu Sans Mono:style=book:size=12
-URxvt.boldfont: xft:DejaVu Sans Mono:style=bold:size=12
-! Backup font
-!URxvt.font:xft:Monospace:pixelsize=14
-!URxvt.boldfont:xft:Monospace:style=bold:pixelsize=14
+URxvt*boldfont: xft:DejaVu Sans Mono:style=bold:size=12
+URxvt*font: xft:DejaVu Sans Mono:style=book:size=12
 URxvt*foreground: Gray
 URxvt*font: xft:LucidaTypewriter:style=Sans Bold:size=10
 URxvt*geometry: 79x50
@@ -21,44 +29,39 @@ URxvt*scrollBar: False
 URxvt*scrollTtyOutput: False
 URxvt*scrollTtyKeypress: True
 
-Xft.dpi:        160
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hintstyle:  hintfull
+! Backup font
+! URxvt.font:xft:Monospace:pixelsize=14
+! URxvt.boldfont:xft:Monospace:style=bold:pixelsize=14
 
-URxvt.font:xft:Monospace:pixelsize=12
-URxvt.boldfont:xft:Monospace:style=bold:pixelsize=12
-
-! black
+! Black.
 URxvt*color0:  #000000
-! red
+! Red.
 URxvt*color1:  #B40000
-! green
+! Green.
 URxvt*color2:  #00AA00
-! yellow
+! Yellow.
 URxvt*color3:  #AAAA00
-! blue
+! Blue.
 URxvt*color4:  #5555AA
-! magenta
+! Magenta.
 URxvt*color5:  #AA00AA
-! cyan
+! Cyan.
 URxvt*color6:  #00AAAA
-! white
+! White.
 URxvt*color7:  #AAAAAA
-! bright black
+! Bright black.
 URxvt*color8:  #555555
-! bright red
+! Bright red.
 URxvt*color9:  #FF0000
-! bright green
+! Bright green.
 URxvt*color10: #00FF00
-! bright yellow
+! Bright yellow.
 URxvt*color11: #FFFF00
-! bright blue
+! Bright blue.
 URxvt*color12: #6464FF
-! bright magenta
+! Bright magenta.
 URxvt*color13: #FF00FF
-! bright cyan
+! Bright cyan.
 URxvt*color14: #00FFFF
-! bright white
+! Bright white.
 URxvt*color15: #FFFFFF
