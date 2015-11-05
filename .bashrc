@@ -1,6 +1,13 @@
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 
+# Etc
+# ---
+# Run xmodmap configuration.
+if [ "$(uname -o)" != "Cygwin" ]; then
+  xmodmap .xmodmap &>/dev/null
+fi
+
 # Shell Options
 # -------------
 # Prompt Setting
@@ -36,14 +43,12 @@ PROMPT_COMMAND=promptFunc
 
 # Aliases
 # -------
-# Load aliases from file
 if [ -f "${HOME}/.bash_aliases" ]; then
   source "${HOME}/.bash_aliases"
 fi
 
 # Functions
 # ---------
-# Load functions from file
 if [ -f "${HOME}/.bash_functions" ]; then
   source "${HOME}/.bash_functions"
 fi
