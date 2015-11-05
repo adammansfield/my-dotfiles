@@ -3,7 +3,7 @@ function apt-get()
   if [ "$(uname -o)" == "Cygwin" ]; then
     apt-cyg $@
   else
-    apt-get $@
+    /usr/bin/apt-get $@
   fi
 }
 
@@ -26,6 +26,6 @@ function sudo()
   if [ "$(uname -o)" == "Cygwin" ]; then
     cygstart --action=runas $@
   else
-    sudo "$@"
+    /usr/bin/sudo "$@"
   fi
 }
