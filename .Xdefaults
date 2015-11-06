@@ -11,6 +11,7 @@ Xft.hinting:    true
 Xft.hintstyle:  hintfull
 
 Rxvt*background: #0A0A0A
+Rxvt*font: Lucida Console-16
 Rxvt*foreground: Gray
 Rxvt*font: Lucida Console-13
 Rxvt*saveLines: 1000
