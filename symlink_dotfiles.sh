@@ -4,6 +4,7 @@ script_path="$(cd "$(dirname "$0")" ; pwd -P )"
 
 mkdir $HOME/.ssh/ &>/dev/null
 ln -is $script_path/.ssh/config $HOME/.ssh/config
+chmod 755 $HOME/.ssh/config
 
 ln -is $script_path/.bash_aliases $HOME/.bash_aliases
 ln -is $script_path/.bash_functions $HOME/.bash_functions
