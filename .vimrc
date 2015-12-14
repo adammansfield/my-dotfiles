@@ -82,6 +82,7 @@ set hlsearch                   " Highlights all instances of the last searched s
 set incsearch                  " Highlights what you are searching for as you type.                                (is)
 set ignorecase                 " Ignores case in search patterns.                                                  (ic)
 set smartcase                  " Don't ignore case when the search pattern has uppercase.                         (scs)
+set wildignorecase             " When set case is ignored when completing file names and directories.             (wic)
 set wrapscan                   " Allows search to wrap to top of document when the bottom has been hit.            (ws)
 
 " Splits
