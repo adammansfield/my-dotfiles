@@ -52,4 +52,3 @@ alias pong='ping 8.8.8.8'
 alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test100.zip'
 alias vi='vim'
 alias t='tmux'
-
