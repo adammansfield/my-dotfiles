@@ -11,7 +11,7 @@ fi
 # Shell Options
 # -------------
 # Prompt Setting
-PS1='\[\e]0;terminal \u@\h \w\a\]\[$(tput setaf 2)\][\u@\h:\W]\[$(tput sgr0)\] $ '
+PS1='\[\e]0;\u@\h \w\a\]\[$(tput setaf 2)\][\u@\h:\W]\[$(tput sgr0)\] $ '
 
 # ls settings
 export LS_COLORS='di=01;37'
