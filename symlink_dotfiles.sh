@@ -1,20 +1,30 @@
 #!/usr/bin/env bash
 
+function link()
+{
+  src_path=$1
+  dst_path=$2
+  filename=$3
+  ln -is $src_path/$filename $dst_path/$filename
+  chmod 755 $dst_path/$filename
+}
+
 script_path="$(cd "$(dirname "$0")" ; pwd -P )"
 
 mkdir $HOME/.ssh/ &>/dev/null
-ln -is $script_path/.ssh/config $HOME/.ssh/config
-chmod 755 $HOME/.ssh/config
+mkdir -p $HOME/.terminfo/r &>/dev/null
 
-ln -is $script_path/.bash_aliases $HOME/.bash_aliases
-ln -is $script_path/.bash_functions $HOME/.bash_functions
-ln -is $script_path/.bash_profile $HOME/.bash_profile
-ln -is $script_path/.bashrc $HOME/.bashrc
-ln -is $script_path/.gitconfig $HOME/.gitconfig
-ln -is $script_path/.gitglobalignore $HOME/.gitglobalignore
-ln -is $script_path/.inputrc $HOME/.inputrc
-ln -is $script_path/.profile $HOME/.profile
-ln -is $script_path/.tmux.conf $HOME/.tmux.conf
-ln -is $script_path/.vimrc $HOME/.vimrc
-ln -is $script_path/.Xdefaults $HOME/.Xdefaults
-ln -is $script_path/.xmodmap $HOME/.xmodmap
+link $script_path/.ssh $HOME/.ssh config
+link $script_path/.terminfo/r $HOME/.terminfo/r rxvt-unicode-256color
+link $script_path $HOME .bash_aliases
+link $script_path $HOME .bash_functions
+link $script_path $HOME .bash_profile
+link $script_path $HOME .bashrc
+link $script_path $HOME .gitconfig
+link $script_path $HOME .gitglobalignore
+link $script_path $HOME .inputrc
+link $script_path $HOME .profile
+link $script_path $HOME .tmux.conf
+link $script_path $HOME .vimrc
+link $script_path $HOME .Xdefaults
+link $script_path $HOME .xmodmap
