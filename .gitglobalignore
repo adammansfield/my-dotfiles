@@ -31,9 +31,9 @@ references
 *.py[co]
 
 # Vim
+*~
 *.swp
 *.swo
 
 # Visual Studio
 *.suo
-
