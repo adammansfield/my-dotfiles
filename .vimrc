@@ -247,6 +247,9 @@ nnoremap <silent> <leader>rtws :call <SID>RemoveTrailingWhitespace()<CR>
 
 " File Contextual Settings
 " =============================================================================
+"
+" Bat
+autocmd FileType bat setlocal fileformat=dos           " Set <EOL> format.                                        (ff)
 
 " C
 autocmd FileType c,h setlocal cindent                  " Enable the intelligent indentation for C.               (cin)
