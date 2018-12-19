@@ -1,37 +1,30 @@
-# If not running interactively, don't do anything
+# If this is not running interactively, then do nothing.
 [[ "$-" != *i* ]] && return
 
-# Etc
-# ---
 # Run xmodmap configuration.
 if [ "$(uname -o)" != "Cygwin" ]; then
   xmodmap .xmodmap &>/dev/null
 fi
 
-# Shell Options
-# -------------
-# Prompt Setting
+# Prompt setting.
 PS1='\[\e]0;\u@\h \w\a\]\[$(tput setaf 2)\][\u@\h:\W]\[$(tput sgr0)\] $ '
 
-# ls settings
+# ls settings.
 export LS_COLORS='di=01;37'
 
-# Don't wait for job termination notification
+# Do not wait for job termination notification.
 set -o notify
 
-# Use case-insensitive filename globbing
+# Use case-insensitive filename globbing.
 shopt -s nocaseglob
 
-# When changing directory small typos can be ignored by bash
-# for example, cd /vr/lgo/apaache would find /var/log/apache
+# Ignore small typos when changing directories.
 shopt -s cdspell
 
-# Completion for sudo
+# Completion for sudo.
 complete -cf sudo
 
-# History Options
-# ---------------
-# Don't put duplicate lines in the history.
+# Do not add duplicate lines in the history.
 export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 
 # Save the previous command in a file before prompting for the next command.
