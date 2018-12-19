@@ -41,20 +41,18 @@ promptFunc()
 }
 PROMPT_COMMAND=promptFunc
 
-# Aliases
-# -------
 if [ -f "${HOME}/.bash_aliases" ]; then
   source "${HOME}/.bash_aliases"
 fi
 
-# Functions
-# ---------
 if [ -f "${HOME}/.bash_functions" ]; then
   source "${HOME}/.bash_functions"
 fi
 
-# Private (Not In Git Repo)
-# -------------------------
 if [ -f "${HOME}/.bash_private" ]; then
   source "${HOME}/.bash_private"
+fi
+
+if [ -f "${HOME}/.dockerenv" ]; then
+  source "${HOME}/.dockerenv"
 fi

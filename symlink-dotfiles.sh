@@ -20,6 +20,7 @@ link $script_path $HOME .bash_aliases
 link $script_path $HOME .bash_functions
 link $script_path $HOME .bash_profile
 link $script_path $HOME .bashrc
+link $script_path $HOME .dockerenv
 link $script_path $HOME .gitconfig
 link $script_path $HOME .gitglobalignore
 link $script_path $HOME .inputrc
