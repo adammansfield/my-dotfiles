@@ -9,9 +9,6 @@ fi
 # Prompt setting.
 PS1='\[\e]0;\u@\h \w\a\]\[$(tput setaf 2)\][\u@\h:\W]\[$(tput sgr0)\] $ '
 
-# ls settings.
-export LS_COLORS='di=01;37'
-
 # Do not wait for job termination notification.
 set -o notify
 
@@ -24,8 +21,10 @@ shopt -s cdspell
 # Completion for sudo.
 complete -cf sudo
 
-# Do not add duplicate lines in the history.
+export GOPATH="$HOME/go"
 export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+export LS_COLORS='di=01;37'
+export PATH="$PATH:/usr/lib/go-1.9/bin"
 
 # Save the previous command in a file before prompting for the next command.
 promptFunc()
