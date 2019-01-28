@@ -1,15 +1,32 @@
 # git
+if [ ! -f ~/.git-completion.bash ]; then
+  echo "Downloading .git-completion.bash"
+  wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
+fi
+. ~/.git-completion.bash
+__git_complete g __git_main
+__git_complete ga _git_add
+__git_complete gb _git_branch
+__git_complete gc _git_commit
+__git_complete gco _git_checkout
+__git_complete gd _git_diff
+__git_complete gdc _git_diff
+__git_complete gl _git_pull
+__git_complete gm _git_merge
+__git_complete glog _git_log
+__git_complete gp _git_push
+__git_complete gs _git_status
+alias g='git'
 alias ga='git add'
+alias gb='git branch'
 alias gc='git commit'
 alias gco='git checkout'
-alias gcl='git clone'
 alias gd='git diff'
 alias gdc='git diff --cached'
-alias gf='git fetch'
-alias gl='git shortlog -8'
-alias gpom='git push origin master'
-alias gpull='git pull'
-alias gpush='git push'
+alias gl='git pull'
+alias gm='git merge'
+alias glog='git shortlog -8'
+alias gp='git push'
 alias grd='git ls-files --deleted -z | xargs -0 git rm'
 alias gs='git status'
 
