@@ -38,6 +38,7 @@ alias fgrep='fgrep --color=auto'
 # ls
 alias ls='ls -hF --color=tty --group-directories-first'
 alias ll='ls -l --group-directories-first'
+alias lla='ls -la --group-directories-first'
 alias la='ls -a --group-directories-first'
 alias lr='ls -R'
 alias l='ls -CF --group-directories-first'
