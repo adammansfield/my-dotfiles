@@ -49,3 +49,5 @@ fi
 if [ -f "${HOME}/.dockerenv" ]; then
   source "${HOME}/.dockerenv"
 fi
+
+command cd ~
