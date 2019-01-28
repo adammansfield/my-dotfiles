@@ -21,6 +21,11 @@ function mdview()
   markdown.pl $1 > mdtemp.html && chrome.exe mdtemp.html && sleep 1s && rm mdtemp.html
 }
 
+function rmcr()
+{
+  sed --in-place 's/\r$//' $1
+}
+
 function sudo()
 {
   if [ "$(uname -o)" == "Cygwin" ]; then
