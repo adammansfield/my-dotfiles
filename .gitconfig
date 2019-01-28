@@ -1,9 +1,12 @@
 [user]
     name = Adam Mansfield
-    email = adam@adammansfield.org
+    email = me@adammansfield.com
 [core]
-    autocrlf = false
+    autocrlf = input
+    editor = vim
     excludesfile = ~/.gitglobalignore
     filemode = false
 [color]
     ui = true
+[help]
+	autocorrect = 2
