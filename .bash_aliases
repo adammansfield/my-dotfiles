@@ -31,9 +31,9 @@ alias grd='git ls-files --deleted -z | xargs -0 git rm'
 alias gs='git status'
 
 # grep
-alias grep='grep --color'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
+alias grep='grep -In --color'
+alias egrep='egrep -In --color=auto'
+alias fgrep='fgrep -In --color=auto'
 
 # ls
 alias ls='ls -hF --color=tty --group-directories-first'
