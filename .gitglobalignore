@@ -1,39 +1,21 @@
-# Autohotkey
 *.ahk.bak
-
-# Eclipse
+*.py[co]
+*.suo
+*.swo
+*.swp
+*~
 .metadata
 .recommenders
-
-# Python
 *.py[co]
-
-# Visual Studio
 *.suo
-
->>>>>>> .gitglobalignore: Added Eclipse .metadata.
-# Packages
-dist
-build
-eggs
-parts
-bin
-obj
-var
-sdist
-develop-eggs
 .installed.cfg
-
-# Personal
-references
-
-# Python
-*.py[co]
-
-# Vim
-*~
-*.swp
-*.swo
-
-# Visual Studio
-*.suo
+.vs
+build
+bin
+develop-eggs
+dist
+eggs
+obj
+parts
+sdist
+var
