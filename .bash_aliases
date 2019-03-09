@@ -12,6 +12,7 @@ __git_complete gco _git_checkout
 __git_complete gd _git_diff
 __git_complete gdc _git_diff
 __git_complete gl _git_pull
+__git_complete glr _git_pull
 __git_complete gm _git_merge
 __git_complete glog _git_log
 __git_complete gp _git_push
@@ -24,6 +25,7 @@ alias gco='git checkout'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gl='git pull'
+alias glr='git pull --rebase'
 alias glog='git log --pretty="%Cred%h %Cblue%ad %Creset%s %Cgreen[%ae]" --graph --date=format:%Y%m%d'
 alias gm='git merge'
 alias gp='git push'
