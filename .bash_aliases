@@ -50,9 +50,6 @@ alias vdir='ls --color=auto --format=long'
 # scp
 alias scpdd='scp -P 2222'
 
-# ssh
-alias ssh='ssh -c arcfour,blowfish-cbc -C'
-
 # svn
 alias sa='svn add'
 alias saa="svn status | grep '?' | sed 's/^.* /svn add /' | sed 's/\\\/\//g' | bash"
