@@ -9,6 +9,9 @@
 [color]
     ui = true
 [help]
-	autocorrect = 2
+	  autocorrect = 2
 [push]
-	default = current
+	  default = current
+[alias]
+    accept-ours = "!f() { [ -z \"$@\" ] && set - '.'; git checkout --ours -- \"$@\"; git add -u -- \"$@\"; }; f"
+    accept-theirs = "!f() { [ -z \"$@\" ] && set - '.'; git checkout --theirs -- \"$@\"; git add -u -- \"$@\"; }; f"
