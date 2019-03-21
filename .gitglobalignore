@@ -1,14 +1,13 @@
 *.ahk.bak
 *.py[co]
-*.suo
 *.swo
 *.swp
+*.suo
+*.vcxproj.user
 *~
+.installed.cfg
 .metadata
 .recommenders
-*.py[co]
-*.suo
-.installed.cfg
 .vs
 build
 bin
