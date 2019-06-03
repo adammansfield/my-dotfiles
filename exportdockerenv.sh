@@ -1,21 +1,22 @@
-#!/bin/bash
-# Script to easily run Export-DockerEnv.ps1 inside Windows for Linux Subsystem (WSL) filesystem.
-timestamp=$(date +%Y%m%dT%H%M%S)
-directory_linux_path="/mnt/c/temp-exportdockerenv-$timestamp"
-directory_windows_path="C:\\temp-exportdockerenv-$timestamp"
-script_filename="Export-DockerEnv.ps1"
+#!/usr/bin/env bash
+# Script to easily run Export-DockerEnv.ps1 inside Windows for Linux Subsystem (WSL).
+declare -r script_directory=$(dirname "$(readlink -f "$0")")
+declare -r powershell_filename="Export-DockerEnv.ps1"
 
-# Copy Powershell script to a path visible from Windows.
+# Run Powershell script from a path visible in Windows.
+declare -r timestamp=$(date +%Y%m%dT%H%M%S)
+declare -r directory_windows_path="C:\\temp-exportdockerenv-$timestamp"
+declare -r directory_linux_path="/mnt/c/temp-exportdockerenv-$timestamp"
 mkdir $directory_linux_path
-cp $script_filename $directory_linux_path
-powershell.exe -NoProfile -File $directory_windows_path\\$script_filename
+cp "$script_directory/$powershell_filename" $directory_linux_path
+powershell.exe -NoProfile -File "$directory_windows_path\\$powershell_filename" $@
 
-dockerenvFile=$directory_linux_path/.dockerenv
-if [ -f $dockerenvFile ]; then
-  mv $dockerenvFile .
+dockerEnvFile=$directory_linux_path/.dockerenv
+if [ -f $dockerEnvFile ]; then
+  mv -f $dockerEnvFile "$script_directory/."
 else
   echo "ERROR: Failed to generate .dockerenv"
 fi
 
-rm $directory_linux_path/$script_filename
+rm $directory_linux_path/$powershell_filename
 rm -d $directory_linux_path
