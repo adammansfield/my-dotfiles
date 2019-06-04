@@ -20,7 +20,7 @@ function Export-DockerEnv()
   if ($RegenerateCerts)
   {
     Write-Host "Regenerating certificates for $VirtualMachine"
-    docker-machine regenerate-certs "$VirtualMachine"
+    RegenerateCerts $VirtualMachine
   }
 
   $commands = docker-machine env --shell sh $VirtualMachine
@@ -30,11 +30,46 @@ function Export-DockerEnv()
   $commands | Out-File -NoNewline -Encoding ASCII $OutFile
 
   Write-Host "Remember to run symlink-dotfiles.sh in Windows Subsystem For Linux to auto-load .dockerenv"
+  Start-Sleep -Seconds 3
 }
 
 function GetDefaultVirtualMachine()
 {
   return (docker-machine ls)[1].Split(" ")[0]
+}
+
+# Similar to Start-Process, but it is synchronous, prints stdout asynchronously, and captures the return code.
+function Invoke-Process([String] $FileName, [String] $Arguments)
+{
+  $internalInvokeProcess = @"
+    using System;
+    using System.Diagnostics;
+
+    public static class InternalInvokeProcess
+    {
+      public static int Run(string filename, string arguments = "", string workingDirectory = "")
+      {
+        Process process = new Process();
+        process.ErrorDataReceived += (object sender, DataReceivedEventArgs args) => Console.WriteLine(args.Data);
+        process.OutputDataReceived += (object sender, DataReceivedEventArgs args) => Console.WriteLine(args.Data);
+        process.StartInfo.Arguments = arguments;
+        process.StartInfo.CreateNoWindow = true;
+        process.StartInfo.FileName = filename;
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.RedirectStandardError = true;
+        process.StartInfo.UseShellExecute = false;
+        process.StartInfo.WorkingDirectory = workingDirectory;
+
+        process.Start();
+        process.BeginOutputReadLine();
+        process.BeginErrorReadLine();
+        process.WaitForExit();
+        return process.ExitCode;
+      }
+    }
+"@
+  Add-Type -TypeDefinition $internalInvokeProcess -Language CSharp
+  return [InternalInvokeProcess]::Run($FileName, $Arguments);
 }
 
 function IsAdmin()
@@ -43,6 +78,15 @@ function IsAdmin()
   $windowsPrincipal = New-Object System.Security.Principal.WindowsPrincipal($windowsIdentitiy);
   $adminRole = [System.Security.Principal.WindowsBuiltInRole]::Administrator;
   return $windowsPrincipal.IsInRole($adminRole)
+}
+
+function RegenerateCerts($VirtualMachine)
+{
+  $result = Invoke-Process "docker-machine" "regenerate-certs --force $VirtualMachine"
+  if ($result -ne 0)
+  {
+    throw [System.InvalidOperationException] "Failed to regenerate certificates"
+  }
 }
 
 # Launch a new elevated process to re-run this script.
