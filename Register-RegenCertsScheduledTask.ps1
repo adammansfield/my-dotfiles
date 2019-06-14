@@ -13,15 +13,16 @@
 # This script can be run from anywhere, but assumes that ~/my-dotfiles exists
 # in the Windows Subsystem for Linux.
 
-$executable = "bash"
+$executable = 'bash'
 $argument = "--norc --noprofile -c '~/my-dotfiles/exportdockerenv.sh -RegenerateCerts'"
 
 $action = New-ScheduledTaskAction -Execute $executable -Argument $argument -WorkingDirectory $PSScriptRoot
 $principal = New-ScheduledTaskPrincipal -UserId $env:UserName -RunLevel Highest
 $trigger = New-ScheduledTaskTrigger -AtLogOn -User $env:UserName
+$trigger.Delay = 'PT1M'
 
 Register-ScheduledTask `
     -Action $action `
     -Principal $principal `
-    -TaskName "RegenerateDockerCerts" `
+    -TaskName 'RegenerateDockerCerts' `
     -Trigger $trigger
