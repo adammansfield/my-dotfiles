@@ -36,6 +36,7 @@ alias gs='git status'
 alias grep='grep -In --color'
 alias egrep='egrep -In --color=auto'
 alias fgrep='fgrep -In --color=auto'
+alias rgrep='grep -Inr --color=auto'
 
 # ls
 alias ls='ls -hF --color=tty --group-directories-first'
