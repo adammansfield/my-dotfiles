@@ -265,6 +265,11 @@ autocmd FileType cpp,hpp setlocal shiftwidth=2         " Width (in spaces) used 
 autocmd FileType cpp,hpp setlocal softtabstop=2        " Makes spaces feel like tabs when deleting.              (sts)
 autocmd FileType cpp,hpp setlocal tabstop=2            " Width (in spaces) that a <tab> is displayed as.          (ts)
 
+" Go
+autocmd FileType go setlocal noexpandtab
+autocmd FileType go setlocal softtabstop=0
+autocmd FileType go setlocal tabstop=2                 " Width (in spaces) that a <tab> is displayed as.          (ts)
+
 " Java
 autocmd FileType java setlocal matchpairs+==:;         " Allow the match pairs (%) to work with '=' and ';'.     (mps)
 autocmd FileType java setlocal smartindent             " Enable the smart indenting feature.                      (si)

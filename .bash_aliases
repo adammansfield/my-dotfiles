@@ -17,6 +17,7 @@ __git_complete gm _git_merge
 __git_complete glog _git_log
 __git_complete gp _git_push
 __git_complete gs _git_status
+__git_complete gss _git_status
 alias g='git'
 alias ga='git add'
 alias gb='git branch'
@@ -31,6 +32,7 @@ alias gm='git merge'
 alias gp='git push'
 alias grd='git ls-files --deleted -z | xargs -0 git rm'
 alias gs='git status'
+alias gss='git status -s'
 
 # grep
 alias grep='grep -In --color'
