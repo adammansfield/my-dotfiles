@@ -22,6 +22,7 @@ script_path="$(cd "$(dirname "$0")" ; pwd -P )"
 mkdir $HOME/.ssh/ &>/dev/null
 mkdir -p $HOME/.terminfo/r &>/dev/null
 
+link $script_path/wsl/ $HOME relay-docker.sh 755
 link $script_path/.ssh $HOME/.ssh config 600
 link $script_path/.terminfo/r $HOME/.terminfo/r rxvt-unicode-256color 600
 link $script_path $HOME .bash_aliases 755
@@ -29,7 +30,6 @@ link $script_path $HOME .bash_functions 755
 link $script_path $HOME .bash_profile 755
 link $script_path $HOME .bash_sshagent 755
 link $script_path $HOME .bashrc 755
-link $script_path $HOME .dockerenv 755
 link $script_path $HOME .gitconfig 755
 link $script_path $HOME .gitglobalignore 755
 link $script_path $HOME .inputrc 755

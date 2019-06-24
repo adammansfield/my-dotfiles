@@ -48,8 +48,4 @@ if [ -f "${HOME}/.bash_sshagent" ]; then
   source "${HOME}/.bash_sshagent"
 fi
 
-if [ -f "${HOME}/.dockerenv" ]; then
-  source "${HOME}/.dockerenv"
-fi
-
 command cd ~

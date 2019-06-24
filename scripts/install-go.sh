@@ -17,7 +17,7 @@ check_gopath() {
   fi
 }
 
-# Return 0 if installed, otherwise, return 1.
+# Return 0 if installed, otherwise, return 1
 godeb_installed() {
   if [ ! -f "$GOPATH/bin/godeb" ]; then
     return 1

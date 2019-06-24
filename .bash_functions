@@ -26,11 +26,11 @@ function rmcr()
   sed --in-place 's/\r$//' $1
 }
 
-function sudo()
+sudo()
 {
-  if [ "$(uname -o)" == "Cygwin" ]; then
-    cygstart --action=runas $@
+  if alias "$1" &> /dev/null ; then
+    $(type "$1" | sed -E 's/^.*`(.*).$/\1/') "${@:2}"
   else
-    /usr/bin/sudo "$@"
+    command sudo "$@"
   fi
 }
