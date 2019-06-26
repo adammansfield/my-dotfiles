@@ -48,4 +48,8 @@ if [ -f "${HOME}/.bash_sshagent" ]; then
   source "${HOME}/.bash_sshagent"
 fi
 
+if [ -f "${HOME}/.travis/travis.sh" ]; then
+  source "${HOME}/.travis/travis.sh"
+fi
+
 command cd ~
