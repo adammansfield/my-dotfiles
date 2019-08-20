@@ -8,6 +8,8 @@ __git_complete g __git_main
 __git_complete ga _git_add
 __git_complete gb _git_branch
 __git_complete gc _git_commit
+__git_complete gca _git_commit
+__git_complete gcad _git_commit
 __git_complete gco _git_checkout
 __git_complete gd _git_diff
 __git_complete gdc _git_diff
@@ -22,6 +24,8 @@ alias g='git'
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
+alias gca='git commit --amend'
+alias gcad='git commit --amend --date=now'
 alias gco='git checkout'
 alias gd='git diff'
 alias gdc='git diff --cached'
