@@ -27,3 +27,9 @@ Set-Alias glog GitLog -Scope Private
 Set-Alias gm GitMerge -Scope Private -Option AllScope -Force
 Set-Alias gp GitPush -Scope Private -Option AllScope -Force
 Set-Alias gs GitStatus -Scope Private
+
+# Chocolatey profile
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
+}
