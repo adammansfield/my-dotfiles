@@ -169,6 +169,12 @@ nnoremap 0 ^
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
+" Center current line in the screen after moving up or down by a page
+nnoremap <C-b> <C-b>zz
+nnoremap <C-f> <C-f>zz
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
 "inoremap ;; <esc>  " remap hh to escape in insert mode.
 "snoremap ;; <esc>  " remap hh to escape in insert mode.
 "xnoremap ;; <esc>  " remap hh to escape in insert mode.

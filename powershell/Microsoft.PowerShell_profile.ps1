@@ -28,7 +28,11 @@ Set-Alias gm GitMerge -Scope Private -Option AllScope -Force
 Set-Alias gp GitPush -Scope Private -Option AllScope -Force
 Set-Alias gs GitStatus -Scope Private
 
-# Chocolatey profile
+$privateProfile = Join-Path $PSScriptRoot "Microsoft.PowerShell_profile_private.ps1"
+if (Test-Path $privateProfile) {
+    . $privateProfile
+}
+
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
